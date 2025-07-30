@@ -134,7 +134,7 @@ MIT License – feel free to fork and build on top!
 
 
 
-> ⚡ *Made with love & JavaScript by \sharon* 🌱
+> ⚡ *Made with love & JavaScript by sharon* 🌱
 
 ```
 
