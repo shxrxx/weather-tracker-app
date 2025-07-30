@@ -5,7 +5,7 @@
 # 🌤️ Weather Tracker – Cloud-Based Real-Time Weather Monitoring App
 
 Weather Tracker is a web-based application that allows users to search and view real-time weather updates from cities around the world.  
-Built with **HTML, CSS, JavaScript (frontend)** and **Node.js + Express (backend)**, it fetches live data from the OpenWeatherMap API and stores user search history in **Firebase Realtime Database**.
+Built with HTML, CSS, JavaScript (frontend) and Node.js + Express (backend), it fetches live data from the OpenWeatherMap API and stores user search history in Firebase Realtime Database.
 
 ---
 
@@ -18,12 +18,13 @@ Built with **HTML, CSS, JavaScript (frontend)** and **Node.js + Express (backend
 ---
 
 ## 🛠️ Technology Stack
-| Layer     | Technology / Tool                  |
-|---------:|-------------------------------------|
-| Frontend | HTML5, CSS3, JavaScript (ES6)       |
-| Backend  | Node.js, Express.js                 |
-| API      | OpenWeatherMap                      |
-| Database | Firebase Realtime Database (NoSQL)  |
+
+| Layer    | Technology / Tool                      |
+|---------:|----------------------------------------|
+| Frontend | HTML5, CSS3, JavaScript (ES6)          |
+| Backend  | Node.js, Express.js                    |
+| API      | OpenWeatherMap                         |
+| Database | Firebase Realtime Database (NoSQL)     |
 | Hosting  | Local (planned: Vercel / GitHub Pages) |
 
 ---
@@ -83,6 +84,8 @@ weather-tracker-app/
 ---
 
 ## ✏️ Planned Future Features
+
+```plaintext
 User authentication (Amazon Cognito)
 
 Personalized weather alerts and notifications
@@ -98,7 +101,7 @@ Historical analytics dashboard
 Persistent search history in AWS DynamoDB
 
 Deploy backend on AWS (EC2, Elastic Beanstalk, or Lambda)
-
+```
 ---
 ## 🔧 Planned AWS services
 
