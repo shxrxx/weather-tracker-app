@@ -12,8 +12,10 @@ Built with HTML, CSS, JavaScript (frontend) and Node.js + Express (backend), it 
 ## ✅ Features (Phase 1 - MVP)
 - Search for real-time weather by city name
 - Display temperature, humidity, wind speed, and weather conditions
-- Save and view search history from the cloud
+- Show UV Index (fetched from OpenUV API)
+- Save and view search history (stored in-memory for now)
 - Responsive, mobile-friendly user interface
+- Interactive temperature chart for 5-day forecast
 
 ---
 
@@ -51,6 +53,7 @@ Create a `.env` file in the project root:
 
 ```plaintext
 OPENWEATHERMAP_API_KEY=your_openweathermap_api_key
+OPENUV_API_KEY=your_openuv_api_key
 ```
 
 ### 4. Start the server
@@ -86,21 +89,14 @@ weather-tracker-app/
 ## ✏️ Planned Future Features
 
 ```plaintext
-User authentication (Amazon Cognito)
-
-Personalized weather alerts and notifications
-
-Advanced data integrations (UV index, air quality, pollen)
-
-Interactive charts (temperature trends, hourly forecast)
-
-Progressive Web App (offline access, install on device)
-
-Historical analytics dashboard
-
-Persistent search history in AWS DynamoDB
-
-Deploy backend on AWS (EC2, Elastic Beanstalk, or Lambda)
+- User authentication (Amazon Cognito)  
+- Persistent search history storage (e.g., AWS DynamoDB)  
+- Personalized weather alerts and notifications  
+- Advanced data integrations (Air Quality Index, pollen)  
+- Interactive charts (hourly forecast, temperature trends)  
+- Progressive Web App capabilities (offline mode, installable)  
+- Historical analytics dashboard  
+- Backend deployment to AWS (EC2, Elastic Beanstalk, Lambda)
 ```
 ---
 ## 🔧 Planned AWS services
@@ -117,14 +113,11 @@ Deploy backend on AWS (EC2, Elastic Beanstalk, or Lambda)
 
 ## 📚 Learn More
 
-OpenWeatherMap API : https://openweathermap.org/api
-
-AWS DynamoDB : https://aws.amazon.com/dynamodb/
-
-Amazon Cognito : https://aws.amazon.com/cognito/
-
-Node.js & Express.js : https://expressjs.com/
-
+- OpenWeatherMap API : https://openweathermap.org/api  
+- OpenUV API : https://openuv.io/  
+- AWS DynamoDB : https://aws.amazon.com/dynamodb/  
+- Amazon Cognito : https://aws.amazon.com/cognito/  
+- Node.js & Express.js : https://expressjs.com/
 
 ---
 

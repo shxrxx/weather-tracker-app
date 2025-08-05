@@ -1,0 +1,15 @@
+<h2>Analytics</h2>
+<ul id="popularCities"></ul>
+<script>
+fetch('/api/analytics', { headers: { Authorization: 'mockToken' }})
+  .then(res => res.json())
+  .then(data => {
+    const ul = document.getElementById('popularCities');
+    data.mostSearched.forEach(city => {
+      const li = document.createElement('li');
+      li.textContent = city;
+      ul.appendChild(li);
+    });
+  });
+</script>
+
