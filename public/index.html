@@ -5,10 +5,207 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Weather Tracker</title>
   <link rel="stylesheet" href="css/styles.css" />
+  <style>
+    /* Auth section styled to match weather tracker UI */
+    #authSection {
+  background: #e3f2fd; /* light blue */
+  border-radius: 12px;
+  padding: 1.5rem 2rem;
+  margin: 0 auto 2rem auto; /* centers horizontally, keeps bottom margin */
+  box-shadow: inset 0 0 12px #90caf9;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  max-width: 360px;
+  width: 100%; /* ensures it takes full width up to max-width */
+}
+
+    #authSection h2 {
+      color: #01579b;
+      font-weight: 700;
+      font-size: 1.5rem;
+      margin-bottom: 1.2rem;
+      user-select: none;
+    }
+    #authSection input {
+      width: 100%;
+      padding: 0.6rem 0.8rem;
+      margin-bottom: 1rem;
+      border: 1.5px solid #90caf9;
+      border-radius: 8px;
+      font-size: 1rem;
+      box-sizing: border-box;
+      transition: border-color 0.3s ease;
+    }
+    #authSection input:focus {
+      outline: none;
+      border-color: #0288d1;
+      box-shadow: 0 0 7px #64b5f6;
+      background: #e1f5fe;
+    }
+    #authSection button {
+      background-color: #0288d1;
+      border: none;
+      border-radius: 8px;
+      color: white;
+      font-weight: 600;
+      font-size: 1rem;
+      cursor: pointer;
+      padding: 0.55rem 1.4rem;
+      margin-right: 0.8rem;
+      box-shadow: 0 3px 8px rgba(2, 119, 209, 0.5);
+      transition: background-color 0.3s ease;
+      user-select: none;
+      flex-grow: 1;
+      max-width: 110px;
+      text-align: center;
+    }
+    #authSection button:hover {
+      background-color: #0277bd;
+      box-shadow: 0 4px 12px rgba(2, 119, 209, 0.7);
+    }
+    #logoutBtn {
+      background-color: #d32f2f;
+      box-shadow: 0 3px 8px rgba(211, 47, 47, 0.5);
+      max-width: 100%;
+      margin-top: 1rem;
+      text-align: center;
+    }
+    #logoutBtn:hover {
+      background-color: #b71c1c;
+      box-shadow: 0 4px 12px rgba(183, 28, 28, 0.7);
+    }
+    #authMessage {
+      margin-top: 0.7rem;
+      min-height: 1.2rem;
+      font-weight: 600;
+      font-size: 0.95rem;
+      color: #d32f2f;
+      user-select: none;
+    }
+
+    /* Layout container */
+    .container {
+      max-width: 600px;
+      margin: 2rem auto;
+      padding: 0 1rem;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      color: #222;
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 1.8rem;
+      color: #0277bd;
+      user-select: none;
+    }
+
+    /* Search section styles (keep your existing styling if you want) */
+    .search-section {
+      display: flex;
+      gap: 0.8rem;
+      margin-bottom: 2rem;
+      justify-content: center;
+    }
+    #cityInput {
+      flex-grow: 1;
+      padding: 0.6rem 0.9rem;
+      font-size: 1.1rem;
+      border-radius: 10px;
+      border: 1.5px solid #90caf9;
+      transition: border-color 0.3s ease;
+      max-width: 350px;
+    }
+    #cityInput:focus {
+      outline: none;
+      border-color: #0288d1;
+      box-shadow: 0 0 7px #64b5f6;
+      background: #e1f5fe;
+    }
+    #searchBtn {
+      background-color: #0288d1;
+      color: white;
+      border: none;
+      border-radius: 10px;
+      padding: 0.6rem 1.3rem;
+      font-weight: 600;
+      font-size: 1rem;
+      cursor: pointer;
+      box-shadow: 0 3px 8px rgba(2, 119, 209, 0.5);
+      transition: background-color 0.3s ease;
+      user-select: none;
+    }
+    #searchBtn:hover {
+      background-color: #0277bd;
+      box-shadow: 0 4px 12px rgba(2, 119, 209, 0.7);
+    }
+
+    /* Weather result and history styles (assumed you have these) */
+    .weather-result {
+      background: #f5faff;
+      border-radius: 12px;
+      padding: 1.3rem 1.8rem;
+      box-shadow: inset 0 0 12px #90caf9;
+      margin-bottom: 2rem;
+      font-size: 1.1rem;
+      color: #01579b;
+      user-select: none;
+    }
+
+    h2 {
+      color: #0277bd;
+      margin-bottom: 0.8rem;
+      user-select: none;
+      font-weight: 700;
+    }
+
+    .history-list {
+      list-style: none;
+      padding-left: 0;
+      max-height: 160px;
+      overflow-y: auto;
+      border: 1.5px solid #90caf9;
+      border-radius: 12px;
+      margin-bottom: 1.6rem;
+    }
+    .history-list li {
+      padding: 0.4rem 0.8rem;
+      cursor: pointer;
+      border-bottom: 1px solid #bbdefb;
+      color: #0277bd;
+      font-weight: 600;
+      transition: background-color 0.2s ease;
+      user-select: none;
+    }
+    .history-list li:hover {
+      background-color: #bbdefb;
+    }
+
+    canvas#tempChart {
+      max-width: 100%;
+      border-radius: 12px;
+      box-shadow: 0 0 10px rgba(2, 119, 209, 0.3);
+    }
+
+    
+    
+  </style>
 </head>
 <body>
   <div class="container">
+
     <h1>🌤️ Weather Tracker</h1>
+
+    <div id="authSection">
+      <h2>🔐 Login or Sign Up</h2>
+      <input type="email" id="emailInput" placeholder="📧 Email" autocomplete="username" />
+      <input type="password" id="passwordInput" placeholder="🔒 Password" autocomplete="current-password" />
+      <div style="display:flex; gap:0.6rem; margin-top:0.8rem;">
+        <button id="loginBtn">Login</button>
+        <button id="signupBtn">Sign Up</button>
+        <button id="logoutBtn" style="display:none;">Logout</button>
+      </div>
+      <p id="authMessage"></p>
+    </div>
+
     <div class="search-section">
       <input type="text" id="cityInput" placeholder="Enter city name" />
       <button id="searchBtn">Search</button>
@@ -25,6 +222,14 @@
   </div>
 
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <!-- Firebase core SDK -->
+  <script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-app-compat.js"></script>
+  <!-- Firebase Authentication -->
+  <script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-auth-compat.js"></script>
+  <!-- Firebase Realtime Database -->
+  <script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-database-compat.js"></script>
+  <!-- Your app’s main JS -->
   <script src="js/main.js"></script>
+
 </body>
 </html>
